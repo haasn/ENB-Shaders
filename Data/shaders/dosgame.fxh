@@ -5,10 +5,22 @@
 #include "common.fxh"
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Configuration flags
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// DO NOT CHANGE THESE HERE, CHANGE THEM IN effect.txt
+
+// The pixel size, larger = more pixelated. A value of 1 should be identical to the original game,
+// but a bug in ENBSeries currently means some lines might still be blended vertically (AR bug)
+#ifndef PIXELSIZE
+#define PIXELSIZE 8
+#endif
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Post-processing pixel shader
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-float4 PS_ProcessDos(VS_OUTPUT_POST IN, float2 vPos : VPOS) : COLOR
+float4 PS_DosGame(VS_OUTPUT_POST IN, float2 vPos : VPOS) : COLOR
 {
 	float4 res;
 	float4 coord=0.0;
@@ -24,7 +36,7 @@ float4 PS_ProcessDos(VS_OUTPUT_POST IN, float2 vPos : VPOS) : COLOR
 	//v1
 	//xs*=0.25;
 	//v2
-	xs=float2(320.0, 240.0);
+	xs=float2(ScreenSize, ScreenSize / 1.5) / PIXELSIZE;
 	float	EColorsCount=16.0001;
 
 	coord.xy=floor(IN.txcoord.xy * xs)/xs;
@@ -46,5 +58,5 @@ float4 PS_ProcessDos(VS_OUTPUT_POST IN, float2 vPos : VPOS) : COLOR
 	return res;
 }
 
-#define SHADER PS_ProcessDos
+#define SHADER PS_DosGame
 #include "technique.fxh"
