@@ -1,0 +1,4 @@
+INSTALL BOTH THE EFFECT AND ENBPALETTE FILES FOR THE SIN CITY EFFECT!!!
+Make sure 'UsePaletteTexture' is set to '1' in the COLORCORRECTION section your ENBseries.ini if you do not see the effect.  Like so:
+
+UsePaletteTexture=1

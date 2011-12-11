@@ -13,7 +13,7 @@
 // The pixel size, larger = more pixelated. A value of 1 should be identical to the original game,
 // but a bug in ENBSeries currently means some lines might still be blended vertically (AR bug)
 #ifndef PIXELSIZE
-#define PIXELSIZE 8
+#define PIXELSIZE 6
 #endif
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++

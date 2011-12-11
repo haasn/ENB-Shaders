@@ -1,0 +1,8 @@
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// DOS game shader
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Higher = more pixelated
+#define PIXELSIZE 6
+
+#include "Data/shaders/dosgame.fxh"

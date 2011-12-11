@@ -1,0 +1,12 @@
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Sharpen
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Sharper preset
+#define ESHARPENING
+#define ESHARPENINGCOLOR
+#define ENOISE
+#define SamplingRange 0.5
+#define SharpeningAmount 4.5
+
+#include "Data/shaders/sharpen.fxh"

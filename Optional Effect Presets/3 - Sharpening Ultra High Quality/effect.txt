@@ -1,0 +1,13 @@
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Sharpen
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Ultra high quality preset
+#define ESHARPENING
+#define ESHARPENINGCOLOR
+#define ENOISE
+#define SamplingRange 0.5
+#define SharpeningAmount 1.5
+#define ScanLineRepeat 0.5
+
+#include "Data/shaders/sharpen.fxh"
