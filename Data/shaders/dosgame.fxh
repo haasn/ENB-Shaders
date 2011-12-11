@@ -16,6 +16,11 @@
 #define PIXELSIZE 6
 #endif
 
+// The additional post brightness curve to apply, to make things less dark
+#ifndef POSTCURVE
+#define POSTCURVE 0.5
+#endif
+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Post-processing pixel shader
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -52,7 +57,7 @@ float4 PS_DosGame(VS_OUTPUT_POST IN, float2 vPos : VPOS) : COLOR
 	origcolor.xyz*=graymax;
 //	origcolor=floor(origcolor * EColorsCount)/EColorsCount;
 
-	res.xyz=origcolor.xyz;
+	res.xyz = pow(origcolor.xyz, POSTCURVE);
 
 	res.w=1.0;
 	return res;
