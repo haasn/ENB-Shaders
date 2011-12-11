@@ -19,6 +19,20 @@ sampler2D SamplerColor = sampler_state
 	MipMapLodBias = 0;
 };
 
+texture2D texNoise;
+sampler2D SamplerNoise = sampler_state
+{
+	Texture       = <texNoise>;
+	MinFilter     = POINT;
+	MagFilter     = POINT;
+	MipFilter     = NONE;
+	AddressU      = Wrap;
+	AddressV      = Wrap;
+	SRGBTexture   = FALSE;
+	MaxMipLevel   = 0;
+	MipMapLodBias = 0;
+};
+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Structures
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -32,6 +46,28 @@ struct VS_INPUT_POST {
 	float3 pos     : POSITION;
 	float2 txcoord : TEXCOORD0;
 };
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Externals
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Keyboard controlled variables
+float tempF1;
+float tempF2;
+float tempF3;
+float tempF4;
+float tempF5;
+float tempF6;
+float tempF7;
+float tempF8;
+float tempF9;
+float tempF0;
+
+// Width of the display resolution (eg. 1920)
+float ScreenSize;
+
+// Screen aspect ratio (width / height)
+float ScreenScaleY;
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Pass-through vertex shader
