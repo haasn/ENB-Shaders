@@ -33,6 +33,19 @@ sampler2D SamplerNoise = sampler_state
 	MipMapLodBias = 0;
 };
 
+// Legacy
+texture2D texBloom;
+sampler2D SamplerBloom = sampler_state
+{
+	Texture     = <texBloom>;
+	MinFilter   = LINEAR;
+	MagFilter   = LINEAR;
+	MipFilter   = LINEAR;
+	AddressU    = Clamp;
+	AddressV    = Clamp;
+	SRGBTexture = FALSE;
+};
+
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Structures
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -68,6 +81,23 @@ float ScreenSize;
 
 // Screen aspect ratio (width / height)
 float ScreenScaleY;
+
+// Color of the screen with time dependent inertia
+float4	ScreenBrightness;
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Legacy externals
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// I don't know if these actually do anything, but I included them regardless
+
+// (-10..10) For bloom it controls how much to dark in the night or when scene is dark (user defined constant factor)
+float	ScreenBrightnessAdaptation;
+
+// (0..10) Actually used for bloom, but may be useful here (user defined constant factor)
+float	bloomPower;
+
+// (0 or 1) If bloom enabled by user
+float	useBloom;
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // Pass-through vertex shader
