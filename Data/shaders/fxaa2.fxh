@@ -17,6 +17,8 @@
 
 /*
 
+// FXAA Injector v2 default settings
+
 #define USE_ANTI_ALIASING 0
 #define USE_PRE_SHARPEN 0
 #define USE_BLOOM 1
