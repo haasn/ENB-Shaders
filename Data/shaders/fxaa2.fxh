@@ -64,12 +64,12 @@ float Sharpen = 0.07;
 #include "injFX_Shaders\Fxaa3_11.h"
 
 // Screen width and height
-#define BUFFER_WIDTH ScreenSize
+float BUFFER_WIDTH = ScreenSize;
 //#define BUFFER_RCP_HEIGHT (ScreenSize / ScreenScaleY)
-#define BUFFER_HEIGHT 1200
+float BUFFER_HEIGHT = BUFFER_WIDTH * (9.0/16.0); // assume 16:9 until boris gets his code fixed
 
-#define BUFFER_RCP_WIDTH (1.0/BUFFER_WIDTH)
-#define BUFFER_RCP_HEIGHT (1.0/BUFFER_HEIGHT)
+float BUFFER_RCP_WIDTH = (1.0/BUFFER_WIDTH);
+float BUFFER_RCP_HEIGHT = (1.0/BUFFER_HEIGHT);
 
 // Compatibility
 #define COLOR0 COLOR
