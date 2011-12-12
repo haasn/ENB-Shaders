@@ -64,7 +64,7 @@ float Sharpen = 0.07;
 #include "injFX_Shaders\Fxaa3_11.h"
 
 // Screen width and height
-#define BUFFER_WIDTH 1920
+#define BUFFER_WIDTH ScreenSize
 #define BUFFER_HEIGHT (BUFFER_WIDTH * 9/16) // assume 16:9 until boris gets his code fixed
 #define BUFFER_RCP_WIDTH  (1.0 / 1920)
 #define BUFFER_RCP_HEIGHT (1.0 / 1200)
