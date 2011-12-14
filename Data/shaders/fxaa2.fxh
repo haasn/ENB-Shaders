@@ -1,5 +1,5 @@
 //===============================================
-// FXAA Injector wrapper, effects originally by:
+// FXAA Injector wrapper, original code by:
 //  - [some_dude]
 //  - BeetleatWar1977
 //  - [DKT70]
