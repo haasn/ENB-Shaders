@@ -9,4 +9,4 @@
 #define SamplingRange 0.5
 #define SharpeningAmount 4.5
 
-#include "Data/shaders/sharpen.fxh"
+#include "Data\shaders\sharpen.fxh"
