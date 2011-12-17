@@ -14,22 +14,22 @@
 						FILTER TO USE CHECK
 ------------------------------------------------------------------------------*/
 #if (USE_PRE_SHARPEN == 1)
-#include "injFX_Shaders\PreSharpen.h"
+#include "Data\shaders\fxaa2\PreSharpen.h"
 #endif
 #if (USE_BLOOM == 1)
-#include "injFX_Shaders\Bloom.h"
+#include "Data\shaders\fxaa2\Bloom.h"
 #endif
 #if (USE_TECHNICOLOR == 1)
-#include "injFX_Shaders\Technicolor.h"
+#include "Data\shaders\fxaa2\Technicolor.h"
 #endif
 #if (USE_TONEMAP == 1)
-#include "injFX_Shaders\Tonemap.h"
+#include "Data\shaders\fxaa2\Tonemap.h"
 #endif
 #if (USE_SEPIA == 1)
-#include "injFX_Shaders\Sepia.h"
+#include "Data\shaders\fxaa2\Sepia.h"
 #endif
 #if (USE_POST_SHARPEN == 1)
-#include "injFX_Shaders\PostSharpen.h"
+#include "Data\shaders\fxaa2\PostSharpen.h"
 #endif
 
 /*------------------------------------------------------------------------------

@@ -61,7 +61,7 @@ float Sharpen = 0.07;
 // NOTE: This version uses a modified FXAA_GREEN_AS_LUMA 1
 #define FXAA_GREEN_AS_LUMA 1
 // Includes the Main shader, FXAA 3.11
-#include "injFX_Shaders\Fxaa3_11.h"
+#include "Data\shaders\fxaa2\Fxaa3_11.h"
 
 // Screen width and height
 #define BUFFER_WIDTH ScreenSize
@@ -75,7 +75,7 @@ float Sharpen = 0.07;
 #define lumaSampler SamplerColor
 
 // Includes additional shaders, like Sharpen, Bloom, Tonemap etc.
-#include "injFX_Shaders\Post.h"
+#include "Data\shaders\fxaa2\Post.h"
 
 // FXAA Shader Function
 float4 FXAA_LumaShader( float2 Tex : TEXCOORD0 ) : COLOR0
