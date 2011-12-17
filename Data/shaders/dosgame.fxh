@@ -16,7 +16,10 @@
 #define PIXELSIZE 6
 #endif
 
-// The additional post brightness curve to apply, to make things less dark
+// Change all of the colors to feel more like a limited color palette
+// #define DOSCOLORS
+
+// The additional post brightness curve to apply, to make things less dark - only with DOSCOLORS
 #ifndef POSTCURVE
 #define POSTCURVE 0.5
 #endif
@@ -27,7 +30,6 @@
 
 float4 PS_DosGame(VS_OUTPUT_POST IN, float2 vPos : VPOS) : COLOR
 {
-	float4 res;
 	float4 coord=0.0;
 
 	coord.xy=IN.txcoord.xy;
@@ -35,19 +37,14 @@ float4 PS_DosGame(VS_OUTPUT_POST IN, float2 vPos : VPOS) : COLOR
 
 	coord.w=0.0;
 
-	float2	xs;
-	xs.x=ScreenSize;
-	xs.y=ScreenSize/ScreenScaleY;
-	//v1
-	//xs*=0.25;
-	//v2
-	xs=float2(ScreenSize, ScreenSize / 1.5) / PIXELSIZE;
-	float	EColorsCount=16.0001;
+	float2 xs=float2(ScreenSize, ScreenSize * 9/16) / PIXELSIZE;
+	float EColorsCount=16.0001;
 
 	coord.xy=floor(IN.txcoord.xy * xs)/xs;
 
 	origcolor=tex2Dlod(SamplerColor, coord);
 
+	#ifdef DOSCOLORS
 	origcolor+=0.0001;
 //	origcolor=lerp(origcolor, normalize(origcolor), 0.5);
 
@@ -56,11 +53,11 @@ float4 PS_DosGame(VS_OUTPUT_POST IN, float2 vPos : VPOS) : COLOR
 	graymax=floor(graymax * EColorsCount)/EColorsCount;
 	origcolor.xyz*=graymax;
 //	origcolor=floor(origcolor * EColorsCount)/EColorsCount;
+	origcolor.xyz = pow(origcolor.xyz, POSTCURVE);
+	#endif
 
-	res.xyz = pow(origcolor.xyz, POSTCURVE);
-
-	res.w=1.0;
-	return res;
+	origcolor.w=1.0;
+	return origcolor;
 }
 
 #define SHADER PS_DosGame
