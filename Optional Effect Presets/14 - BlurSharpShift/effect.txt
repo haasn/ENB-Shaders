@@ -8,10 +8,11 @@
 // Second: Sharpen
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-// Default preset
 #define ESHARPENING
 #define ESHARPENINGCOLOR
-#define ENOISE
+#define SamplingRange 1.0
+#define SharpeningAmount 5.0
+#define ScanLineRepeat 1.0
 
 #include "Data\shaders\sharpen.fxh"
 
