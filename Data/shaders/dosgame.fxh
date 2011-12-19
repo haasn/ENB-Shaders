@@ -37,7 +37,7 @@ float4 PS_DosGame(VS_OUTPUT_POST IN, float2 vPos : VPOS) : COLOR
 
 	coord.w=0.0;
 
-	float2 xs=float2(ScreenSize, ScreenSize * 9/16) / PIXELSIZE;
+	float2 xs = ScreenRect / PIXELSIZE;
 	float EColorsCount=16.0001;
 
 	coord.xy=floor(IN.txcoord.xy * xs)/xs;

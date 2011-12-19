@@ -82,6 +82,14 @@ float ScreenSize;
 // Screen aspect ratio (width / height)
 float ScreenScaleY;
 
+// Temporary bug fix
+#define ScreenScaleY (16/9.0)
+
+// Definitions for easier access
+#define ScreenWidth ScreenSize
+#define ScreenHeight (ScreenSize / ScreenScaleY)
+#define ScreenRect float2(ScreenWidth, ScreenHeight)
+
 // Color of the screen with time dependent inertia
 float4	ScreenBrightness;
 
