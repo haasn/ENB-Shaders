@@ -1,0 +1,10 @@
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Sharpen
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// Default preset
+#define ESHARPENING
+#define ESHARPENINGCOLOR
+#define ENOISE
+
+#include "Data\shaders\sharpen.fxh"

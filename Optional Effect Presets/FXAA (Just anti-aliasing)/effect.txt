@@ -1,0 +1,8 @@
+// Enable just AA
+#define USE_ANTI_ALIASING 1
+#define FXAA_QUALITY__PRESET 6
+float fxaaQualitySubpix = 0.3885;
+float fxaaQualityEdgeThreshold = 0.1315;
+float fxaaQualityEdgeThresholdMin = 0.0545;
+
+#include "Data\shaders\fxaa2.fxh"

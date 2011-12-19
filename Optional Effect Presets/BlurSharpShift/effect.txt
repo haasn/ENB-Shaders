@@ -1,0 +1,23 @@
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// First: Blur
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#include "Data\shaders\blur.fxh"
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Second: Sharpen
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#define ESHARPENING
+#define ESHARPENINGCOLOR
+#define SamplingRange 1.0
+#define SharpeningAmount 5.0
+#define ScanLineRepeat 1.0
+
+#include "Data\shaders\sharpen.fxh"
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// Third: Shift
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+#include "Data\shaders\shift.fxh"
