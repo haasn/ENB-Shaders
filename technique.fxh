@@ -71,6 +71,6 @@ technique TECH(NEXT)
 	#define NEXT 21
 #elif NEXT == 21
 	#define NEXT 22
-#elif NEXT == 12
+#elif NEXT == 22
 	#define NEXT 23
 #endif
