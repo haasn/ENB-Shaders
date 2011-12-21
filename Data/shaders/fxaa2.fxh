@@ -66,8 +66,8 @@ float Sharpen = 0.07;
 // Screen width and height
 #define BUFFER_WIDTH ScreenWidth
 #define BUFFER_HEIGHT ScreenHeight
-#define BUFFER_RCP_WIDTH  (1.0 / ScreenWidth)
-#define BUFFER_RCP_HEIGHT (1.0 / ScreenHeight)
+#define BUFFER_RCP_WIDTH ScreenWidthInv
+#define BUFFER_RCP_HEIGHT ScreenHeightInv
 
 // Compatibility
 #define COLOR0 COLOR
