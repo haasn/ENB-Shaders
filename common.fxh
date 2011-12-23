@@ -65,16 +65,9 @@ struct VS_INPUT_POST {
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // Keyboard controlled variables
-float tempF1;
-float tempF2;
-float tempF3;
-float tempF4;
-float tempF5;
-float tempF6;
-float tempF7;
-float tempF8;
-float tempF9;
-float tempF0;
+float4 tempF1;
+float4 tempF2;
+float4 tempF3;
 
 // Display resolution
 #ifdef ENB100
